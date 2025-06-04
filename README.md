@@ -2,14 +2,19 @@
 
 **PyPositron** is a Python-powered desktop app framework that lets you build cross-platform apps using HTML, CSS, and Python—just like Electron, but with Python as the backend. Write your UI in HTML/CSS, add interactivity with Python, and run your app natively!
 
+**PyPositron is currently in alpha stage.** It is not yet ready for production use, but you can try it out and contribute to its development. See more in [Contributing](#contributing).
 
 ## Features
 
 - Build desktop apps using HTML and CSS.
-- Use Python for backend logic.
+- Use Python for backend and frontend logic. (with support for both Python and JS)
+- Use any HTML/CSS framework (like Bootstrap, Tailwind, etc.) for your UI.
+- Use any HTML builder UI for your app (like Bootstrap Studio, Pinegrow, etc)
+- Use JS for compatibility with existing HTML/CSS frameworks.
+- Use AI tools for generating your UI without needing proprietary system prompts- simply tell it to generate HTML/CSS/JS UI for your app.
 - Virtual environment support.
-- Effecient installer creation for easy distribution 
-(the installer automatically finds an existing browser instead of installing a new one for every app like Electron.JS).
+- Efficient installer creation for easy distribution (that does not exist yet)
+(The installer automatically finds an existing browser instead of installing a new one for every app like Electron.JS).
 
 
 ## Quick Start
@@ -68,16 +73,27 @@ your_app/
 
 ## Example: Hello World App
 
-**main_app.py**
+**backend/main_app.py**
 ```python
-import py_positron as main
+import py_positron as positron
+import time
 
-# Run this file by typing 'positron start' in your project root.
-main.openUI("frontend/index.html", None, 900, 700, title="Example app") #openUI opens a UI and starts automatically
-print("Stopping...") #This runs after the app is closed
+def main(ui):
+    # Wire up event handlers when UI is ready
+    button = ui.document.getElementById("button")
+    def on_click():
+        current_time = time.strftime("%H:%M:%S")
+        ui.document.alert(f"The current time is {current_time}")
+    button.addEventListener("click", on_click)
+
+def after_close(ui):
+    print("App has closed.")
+
+# Launch the UI with ready/close callbacks
+positron.openUI("frontend/index.html",main,after_close,title="Example App")
 ```
 
-**views/index.html**
+**frontend/index.html**
 ```html
 <!DOCTYPE html>
 <html>
@@ -87,28 +103,18 @@ print("Stopping...") #This runs after the app is closed
 <body>
     <h1>Hello from PyPositron!</h1>
     <button id="button">Show Time</button>
-<py>
-import time
-button = document.getElementById('button')
-def button_handler():
-    document.alert("The current time is " + str(time.strftime("%H:%M:%S")))
-button.addEventListener('click', button_handler)
-</py>
-<!--<script>
-    //You can also use JavaScript if you want.
-</script>-->
 </body>
 </html>
 ```
 
 ## CLI Commands
 
-| Command                         | Description                                              |
-|---------------------------------|----------------------------------------------------------|
-| `positron create`               | Create a new PyPositron project (interactive setup).     |
-| `positron start`                | Run your PyPositron app from the project root.           |
-| `positron install <package>`    | Install a Python package into the project venv.          |
-| `positron venv`                 | Create a virtual environment inside your project folder. |
+| Command                                  | Description                                                   |
+|------------------------------------------|---------------------------------------------------------------|
+| `positron create`                        | Create a new PyPositron project (interactive setup).          |
+| `positron start [--executable <python>]` | Run your PyPositron app (optionally specify Python interpreter).|
+| `positron install <package>`             | Install a Python package into the project venv.               |
+| `positron venv`                          | Create a virtual environment inside your project folder.      |
 
 
 ## Documentation & Resources
@@ -118,3 +124,13 @@ button.addEventListener('click', button_handler)
 ## License
 
 GNU AGPL v3 License. See [LICENSE](LICENSE) for details.
+
+## Contributing
+
+This project is in alpha stage. Contributions are welcome! Contrubute like any other project on Github. Things to do-
+[ ] Make documentation and README that is not AI-generated
+[ ] Add more examples and tutorials
+[ ] Test on Linux
+[ ] Add support for MacOS
+[ ] Add building and packaging features (like converting to executables/installers that can run on any system without Python installed)
+[ ] Optimize performance.
