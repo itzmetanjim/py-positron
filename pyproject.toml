@@ -1,0 +1,43 @@
+[project]
+name = "py_positron"
+version = "0.0.2.0"
+authors = [
+  { name="itzmetanjim", email="tanjimkamal1@gmail.com" },
+]
+dependencies = [
+  "pywebview",
+  "pathlib2"
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13"
+]
+license = "AGPL-3.0-or-later"
+license-files = ["LICEN[CS]E*"]
+keywords = ["python","framework","webview","gui","desktop","cross-platform","electron","pywebview","positron","py-positron","html","css","js","javascript","web","app"]
+[project.urls]
+Homepage = "https://github.com/itzmetanjim/py-positron"
+Issues = "https://github.com/itzmetanjim/py-positron/issues"
+Documentation= "https://github.com/itzmetanjim/py-positron/wiki"
+Repository= "https://github.com/itzmetanjim/py-positron"
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+[project.scripts]
+positron = "py_positron.cli:main"
+[tool.setuptools]
+[tool.setuptools.packages.find]
+where = ["src"]

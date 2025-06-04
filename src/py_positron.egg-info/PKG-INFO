@@ -1,3 +1,32 @@
+Metadata-Version: 2.4
+Name: py_positron
+Version: 0.0.2.0
+Summary: A small example package
+Author-email: itzmetanjim <tanjimkamal1@gmail.com>
+License-Expression: AGPL-3.0-or-later
+Project-URL: Homepage, https://github.com/itzmetanjim/py-positron
+Project-URL: Issues, https://github.com/itzmetanjim/py-positron/issues
+Project-URL: Documentation, https://github.com/itzmetanjim/py-positron/wiki
+Project-URL: Repository, https://github.com/itzmetanjim/py-positron
+Keywords: python,framework,webview,gui,desktop,cross-platform,electron,pywebview,positron,py-positron,html,css,js,javascript,web,app
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pywebview
+Requires-Dist: pathlib2
+Dynamic: license-file
+
 # PyPositron
 
 **PyPositron** is a Python-powered desktop app framework that lets you build cross-platform apps using HTML, CSS, and Python—just like Electron, but with Python as the backend. Write your UI in HTML/CSS, add interactivity with Python, and run your app natively!
