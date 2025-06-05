@@ -1,8 +1,7 @@
 # PyPositron
-
+### **PyPositron is currently in alpha stage.** It is not yet ready for production use, but you can try it out and contribute to its development. See more in [Contributing](#contributing).
 **PyPositron** is a Python-powered desktop app framework that lets you build cross-platform apps using HTML, CSS, and Python—just like Electron, but with Python as the backend. Write your UI in HTML/CSS, add interactivity with Python, and run your app natively!
 
-**PyPositron is currently in alpha stage.** It is not yet ready for production use, but you can try it out and contribute to its development. See more in [Contributing](#contributing).
 
 ## Features
 
