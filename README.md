@@ -140,9 +140,9 @@ GNU AGPL v3 License. See [LICENSE](LICENSE) for details.
 ## Contributing
 
 This project is in alpha stage. Contributions are welcome! Contrubute like any other project on Github. Things to do-
-[ ] Make documentation and README that is not AI-generated
-[ ] Add more examples and tutorials
-[ ] Test on Linux
-[ ] Add support for MacOS
-[ ] Add building and packaging features (like converting to executables/installers that can run on any system without Python installed)
-[ ] Optimize performance.
+* [ ] Make documentation and README that is not AI-generated
+* [ ] Add more examples and tutorials
+* [ ] Test on Linux
+* [ ] Add support for MacOS
+* [ ] Add building and packaging features (like converting to executables/installers that can run on any system without Python installed)
+* [ ] Optimize performance.
