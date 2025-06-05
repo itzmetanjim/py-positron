@@ -16,6 +16,18 @@
 - Efficient installer creation for easy distribution (that does not exist yet)
 (The installer automatically finds an existing browser instead of installing a new one for every app like Electron.JS).
 
+## Why PyPositron?
+Compared to Electron and other Python frameworks (like PyQt)-
+| Feature | PyPositron | Electron | PyQt |
+|---------|------------|----------|------|
+| Language | Python | **JavaScript, C, C++, etc** | Python |
+| UI Frameworks | Only frontend HTML/CSS/JS | **Any Web technologies** | Qt Widgets |
+| Packaging | **Efficient installer or standalone executable (not yet implemented)** | Electron Builder | PyInstaller etc |
+| Performance | **Lightweight** | Heavyweight | **Lightweight** |
+| AI Compatibility | **Yes** | **Yes\*** | No\* |
+| Compatibility | All frontend HTML/CSS/JS frameworks | **All frontend and backend HTML/CSS/JS frameworks and web technologies** | Limited to Qt |
+
+\* maybe
 
 ## Quick Start
 
