@@ -40,84 +40,33 @@ Them create a new project using the CLI:
 ```bash
 positron create
 # Follow the prompts to set up your project
-cd <your_app_name>
 ```
+There should be directories in this structure-
+
+```
+your_app/
+├── backend
+│   └── main.py
+├── frontend/
+│   └── index.html
+├── [win/linux]venv/ # If created
+│   └──...
+├── LICENSE #MIT by default
+├── config.json
+└── ...
+```
+
+- **backend/main.py**: Entry point for your app. 
+- **frontend/index.html**: Your app's UI (HTML/CSS/inline Python/JS). 
+- **winvenv/** or **linuxvenv/**:: (Optional) Virtual environment for dependencies.
 
 ### 2. Run Your App
 
 ```bash
 positron start
-```
+``` 
 
-### 3. Install Python Packages
-
-```bash
-positron install <package>
-```
-
-### 4. Create a Virtual Environment
-
-```bash
-positron venv
-```
-
-## Example Project Structure
-
-```
-your_app/
-├── backend
-│   └── main_app.py
-├── frontend/
-│   └── index.html
-├── [win/linux]venv/
-│   └──[bin/Scripts]/
-│       ├── activate
-│       ├── python.exe
-│       └── ...
-├──LICENSE
-└── ...
-```
-
-- **backend/main_app.py**: Entry point for your app. 
-- **frontend/index.html**: Your app's UI (HTML/CSS/inline Python). 
-- **winvenv/** or **linuxvenv/**:: (Optional) Virtual environment for dependencies. 
-
-
-## Example: Hello World App
-
-**backend/main_app.py**
-```python
-import py_positron as positron
-import time
-
-def main(ui):
-    # Wire up event handlers when UI is ready
-    button = ui.document.getElementById("button")
-    def on_click():
-        current_time = time.strftime("%H:%M:%S")
-        ui.document.alert(f"The current time is {current_time}")
-    button.addEventListener("click", on_click)
-
-def after_close(ui):
-    print("App has closed.")
-
-# Launch the UI with ready/close callbacks
-positron.openUI("frontend/index.html",main,after_close,title="Example App")
-```
-
-**frontend/index.html**
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Python-Powered App</title>
-</head>
-<body>
-    <h1>Hello from PyPositron!</h1>
-    <button id="button">Show Time</button>
-</body>
-</html>
-```
+This should open up a window with a checkmark and a button.
 
 ## CLI Commands
 
