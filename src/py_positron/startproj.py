@@ -23,7 +23,7 @@ def get_venv_positron_version(python_executable):
         # Run a command to get the version from the target environment
         cmd = [python_executable, "-c", "import py_positron; print(py_positron.__version__)"]
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
-        
+
         if result.returncode == 0:
             return result.stdout.strip()
         else:
@@ -52,11 +52,11 @@ def check_and_warn_version_mismatch(python_executable):
     current_version = get_current_positron_version()
     if not current_version:
         return  # Can't check if we don't know current version
-    
+
     venv_version = get_venv_positron_version(python_executable)
     if not venv_version:
         return  # Can't check if we can't get venv version
-    
+
     if compare_versions(current_version, venv_version):
         warn_version_mismatch(current_version, venv_version)
 
@@ -65,7 +65,7 @@ def check_and_warn_version_mismatch_linux(venv_path):
     current_version = get_current_positron_version()
     if not current_version:
         return  # Can't check if we don't know current version
-    
+
     python_executable = os.path.join(venv_path, "bin", "python3")
     if os.path.exists(python_executable):
         venv_version = get_venv_positron_version(python_executable)
@@ -101,7 +101,7 @@ def start(argv):
                 if os.path.exists(config.get("winvenv_executable","")) and config.get("winvenv_executable","") != "":
                     # Check for version mismatch before running
                     check_and_warn_version_mismatch(config["winvenv_executable"])
-                    cmd = ["powershell","-NoProfile","-ExecutionPolicy", "Bypass","-Command", f"& \'{absolute}\' \'{config["entry_file"]}\' \'{os.getcwd()}\' \'{config["winvenv_executable"]}\'"]
+                    cmd = ["powershell","-NoProfile","-ExecutionPolicy", "Bypass","-Command", f"& '{absolute}' '{config['entry_file']}' '{os.getcwd()}' '{config['winvenv_executable']}'"]
                     result = subprocess.run(cmd,check=True)
                     if result.returncode != 0:
                         print("Error:", result.stderr, file=sys.stderr)
@@ -110,7 +110,7 @@ def start(argv):
                 else:
                     print("\x1b[0;93;49m[WARN]Running without venv, as this project does not contain a windows venv, but has a linux venv.\x1b[0m")
             # Use the executable from command line argument instead of config
-            cmd = ["powershell","-NoProfile","-ExecutionPolicy", "Bypass","-Command", f"& '{absolute}' \'{config["entry_file"]}\' \'{os.getcwd()}\' \'{args.executable}\'"]
+            cmd = ["powershell","-NoProfile","-ExecutionPolicy", "Bypass","-Command", f"& '{absolute}' '{config['entry_file']}' '{os.getcwd()}' '{args.executable}'"]
             result = subprocess.run(cmd,check=True)
             if result.returncode != 0:
                 print("Error:", result.stderr, file=sys.stderr)
@@ -132,7 +132,7 @@ def start(argv):
             ps1_path = Path(__file__).parent / "python_executor.ps1"
             absolute = ps1_path.resolve()
             # Use the executable from command line argument instead of config
-            cmd = ["powershell","-NoProfile","-ExecutionPolicy", "Bypass","-Command", f"& '{absolute}' \'{config["entry_file"]}\' \'{os.getcwd()}\' \'{args.executable}\'"]
+            cmd = ["powershell","-NoProfile","-ExecutionPolicy", "Bypass","-Command", f"& '{absolute}' '{config['entry_file']}' '{os.getcwd()}' '{args.executable}'"]
             result = subprocess.run(cmd,check=True)
             if result.returncode != 0:
                 print("Error:", result.stderr, file=sys.stderr)
