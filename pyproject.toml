@@ -8,7 +8,7 @@ dependencies = [
   "pywebview",
   "pathlib2"
 ]
-description = "A small example package"
+description = "PyPositron is a python framework for building apps with HTML, CSS and Python. itzmetanjim.github.io/py-positron/"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
