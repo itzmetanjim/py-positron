@@ -1,2 +1,0 @@
-pywebview
-pathlib2

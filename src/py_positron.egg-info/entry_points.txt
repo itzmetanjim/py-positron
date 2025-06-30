@@ -1,2 +1,0 @@
-[console_scripts]
-positron = py_positron.cli:main
