@@ -1,6 +1,6 @@
 [project]
 name = "py_positron"
-version = "0.0.2.2"
+version = "0.0.2.3"
 authors = [
   { name="itzmetanjim", email="tanjimkamal1@gmail.com" },
 ]
