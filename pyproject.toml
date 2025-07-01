@@ -6,7 +6,8 @@ authors = [
 ]
 dependencies = [
   "pywebview",
-  "pathlib2"
+  "pathlib2",
+  "packaging"
 ]
 description = "PyPositron is a python framework for building apps with HTML, CSS and Python. itzmetanjim.github.io/py-positron/"
 readme = "README.md"
