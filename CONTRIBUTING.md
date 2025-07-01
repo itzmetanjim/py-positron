@@ -2,7 +2,7 @@
 
 Thank you for considering contributing to **py-positron**\! Your help is greatly appreciated.  
 Please follow these guidelines to ensure a smooth contribution process.
-
+> Note: If you want to contribute to the website [pypositron.github.io](pypositron.github.io), go to [the repo for the website](https://github.com/PyPositron/pypositron.github.io) instead. You can follow the same guidelines, however.
 ## Getting Started
 
 1. **Fork** the repository.
