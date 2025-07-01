@@ -1,4 +1,6 @@
+<p align="center">
 <img src="icon_wide.png" alt="PyPositron wordmark" height="75"/>
+</p>
 
 # PyPositron
 ### **PyPositron is currently in alpha stage.** It is not yet ready for production use, but you can try it out and contribute to its development. See more in [Contributing](#contributing).
