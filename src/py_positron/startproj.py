@@ -123,10 +123,11 @@ def start(argv):
                     check_and_warn_version_mismatch_linux(config["linuxvenv"])
                     os.system("bash -c \'source \""+config["linuxvenv"]+"/bin/activate\" && "+args.executable+" \""+os.path.abspath(config["entry_file"])+"\"\'")
                     exit(0)
-            else:
+                else:
                     print("\x1b[0;93;49m[WARN]Running without venv, as this project does not contain a linux venv, but has a Windows venv.\x1b[0m")
-                    os.system(args.executable+" \""+os.path.abspath(config["entry_file"])+"\"")
-                    exit(0)
+            else:
+                os.system(args.executable+" \""+os.path.abspath(config["entry_file"])+"\"")
+                exit(0)
     else:
         if platform.system().lower().strip() == "windows":
             ps1_path = Path(__file__).parent / "python_executor.ps1"
