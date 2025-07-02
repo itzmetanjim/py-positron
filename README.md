@@ -91,7 +91,8 @@ GNU AGPL v3 License. See [LICENSE](LICENSE) for details.
 
 ## Contributing
 
-This project is in alpha stage. Contributions are welcome. Things to do-
+This project is in alpha stage. Contributions are welcome. See [Contributing](CONTRIBUTING.md) for details.
+Things to do-
 * [ ] Make documentation and README that is not AI-generated
 * [ ] Add more examples and tutorials
 * [ ] Make the installer/executable creation system
