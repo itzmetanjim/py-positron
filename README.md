@@ -11,7 +11,7 @@
 
 - Build desktop apps using HTML and CSS.
 - Use Python for backend and frontend logic. (with support for both Python and JS)
-- Use any HTML/CSS framework (like Bootstrap, Tailwind, etc.) for your UI.
+- Use any web framework (like Bootstrap, Tailwind, React, etc.) for your UI.
 - Use any HTML builder UI for your app (like Bootstrap Studio, Pinegrow, etc)
 - Use JS for compatibility with existing HTML/CSS frameworks.
 - Use AI tools for generating your UI without needing proprietary system prompts- simply tell it to generate HTML/CSS/JS UI for your app.
@@ -24,11 +24,11 @@ Compared to Electron and other Python frameworks (like PyQt)-
 | Feature | PyPositron | Electron | PyQt |
 |---------|------------|----------|------|
 | Language | Python | **JavaScript, C, C++, etc** | Python |
-| UI Frameworks | Only frontend HTML/CSS/JS | **Any Web technologies** | Qt Widgets |
+| UI Frameworks | **Any web technologies** | **Any Web technologies** | Qt Widgets |
 | Packaging | **Efficient installer or standalone executable (not yet implemented)** | Electron Builder | PyInstaller etc |
 | Performance | **Lightweight** | Heavyweight | **Lightweight** |
 | AI Compatibility | **Yes** | **Yes\*** | No\* |
-| Compatibility | All frontend HTML/CSS/JS frameworks | **All frontend and backend HTML/CSS/JS frameworks and web technologies** | Limited to Qt |
+| Compatibility | **All frontend and backend HTML/CSS/JS frameworks and web technologies** | **All frontend and backend HTML/CSS/JS frameworks and web technologies** | Limited to Qt |
 
 \* maybe
 
