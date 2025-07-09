@@ -6,6 +6,10 @@
 ### **PyPositron is currently in alpha stage.** It is not yet ready for production use, but you can try it out and contribute to its development. See more in [Contributing](#contributing).
 **PyPositron** is a Python-powered desktop app framework that lets you build cross-platform apps using HTML, CSS, and Python—just like Electron, but with Python as the backend. Write your UI in HTML/CSS, add interactivity with Python, and run your app natively!
 
+**PyPositron is launching on Product Hunt on 11th July! Upvote the product when it launches so it can be the product of the day, or follow the product now to get notified of its launch.**
+
+<a href="https://www.producthunt.com/products/pypositron?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-pypositron" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=988502&theme=light&t=1752034468845" alt="PyPositron - Effortlessly&#0032;build&#0032;desktop&#0032;apps&#0044;&#0032;hassle&#0045;free&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 
 ## Features
 
