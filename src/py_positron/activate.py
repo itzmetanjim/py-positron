@@ -1,36 +1,67 @@
-import os
-import sys
 import json
-import platform
+import os
 import subprocess
-from pathlib2 import Path
-# This script is used to activate the PyPositron virtual environment
-def activate():
-    if not os.path.exists("config.json"):
-        print("This folder does not contain a PyPositron project. Please navigate to the project root, where config.json is located.")
-        print("You can create a new project with PyPositron create.")
-        sys.exit(1)
-    with open(os.path.abspath("config.json"), "r") as f:
-        config = json.load(f)
+import sys
+from pathlib import Path
+
+
+def activate() -> None:
+    """Activate PyPositron virtual environment."""
+    os.chdir(os.path.dirname(os.path.abspath("config.json")))
+    config: dict[str, str] = load_config()
+
     # switch CWD to project root so all relative paths (entry_file, venvs) resolve correctly
-    if platform.system().lower().strip() == "windows":
-        if os.path.exists(config["winvenv_executable"]):
-            os.chdir(os.path.dirname(os.path.abspath("config.json")))
-            ps1_path = Path(os.path.join(os.getcwd(),os.path.dirname(config["winvenv_executable"]))) / "activate.ps1"
-            absolute = ps1_path.resolve()
-            cmd = ["powershell","-NoProfile","-ExecutionPolicy", "Bypass","-Command", f"& '{absolute}'"]
-            result = subprocess.run(cmd,check=True)
-            if result.returncode != 0:
-                print("Error:", result.stderr, file=sys.stderr)
-                sys.exit(result.returncode)
-            sys.exit(0)
-        else:
-            print("This project does not contain a PyPositron Windows venv. Please create a new venv with PyPositron venv.")
-            sys.exit(1)
-    
+    if Path(config["winvenv_executable"]).exists():
+        windows_activation(config["winvenv_executable"])
+    elif Path(config["linuxvenv"]).exists():
+        linux_activation()
     else:
-        if os.path.exists(config["linuxvenv"]):
-            os.system("bash -c \"source linuxvenv/bin/activate\"")
-        else:
-            print("This project does not contain a PyPositron Linux venv. Please create a new venv with PyPositron venv.")
-            sys.exit(1)
+        exit_activation()
+
+
+def windows_activation(env_path: str) -> None:
+    """Activate the Windows virtual environment."""
+    ps1_path: str = str(Path.cwd() / Path(env_path).parent / "activate.ps1")
+    cmd: list[str] = [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        f"& '{ps1_path}'",
+    ]
+    result = subprocess.run(cmd, check=True)
+    if result.returncode != 0:
+        print("Error:", result.stderr, file=sys.stderr)
+        sys.exit(result.returncode)
+    sys.exit(0)
+
+
+def linux_activation() -> None:
+    """Activate the Linux virtual environment."""
+    cmd: str = 'bash -c "source linuxvenv/bin/activate"'
+    os.system(cmd)
+
+
+def exit_activation() -> None:
+    """Exit the virtual environment setup."""
+    print(
+        "This project does not contain a PyPositron venv. "
+        "Please create a new venv with PyPositron venv.",
+    )
+    sys.exit(1)
+
+
+def load_config() -> dict[str, str]:
+    """Load the configuration from config.json."""
+    config_file: str = "config.json"
+    if not Path(config_file).exists():
+        print(
+            "This folder does not contain a PyPositron project. "
+            "Please navigate to the project root, where config.json is located."
+            "\nYou can create a new project with PyPositron create.",
+        )
+        sys.exit(1)
+
+    with Path.open(Path(config_file).resolve()) as f:
+        return json.load(f)
