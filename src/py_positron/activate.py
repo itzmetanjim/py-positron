@@ -7,6 +7,7 @@ from pathlib import Path
 
 def activate() -> None:
     """Activate PyPositron virtual environment."""
+    os.chdir(os.path.dirname(os.path.abspath("config.json")))
     config: dict[str, str] = load_config()
 
     # switch CWD to project root so all relative paths (entry_file, venvs) resolve correctly
