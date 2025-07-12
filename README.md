@@ -94,7 +94,7 @@ This should open up a window with a checkmark and a button.
     </div>
   </div><br><br>
   <div style="display: flex; flex-direction: column; align-items: center;">
-    <img src="https://github.com/user-attachments/assets/fa712751-12ca-43c9-b771-e4e07b54cbf5" style="height:500px; object-fit: contain;">
+    <img src="https://github.com/user-attachments/assets/fa712751-12ca-43c9-b771-e4e07b54cbf5" style=" object-fit: contain;">
     <div style="text-align: center; margin-top: 8px; font-size: 14px; color: #555;">
       A simple example code editor (dark on the right) with the backend code shown (left).
     </div>
