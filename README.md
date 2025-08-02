@@ -106,7 +106,7 @@ This should open up a window with a checkmark and a button.
 
 ## License and code of conduct.
 
-This project uses the GNU AGPL v3 License. See [LICENSE](LICENSE) for details. If you have any problems with this, feel free to open an issue/dicussion.
+This project uses the MIT License. See [LICENSE](LICENSE) for details. If you have any problems with this, feel free to open an issue/dicussion.
 
 This project follows a [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
 
@@ -121,3 +121,4 @@ Things to do-
 * [ ] Add support for MacOS
 * [ ] Add building and packaging features (like converting to executables/installers that can run on any system without Python installed)
 * [ ] Optimize performance.
+
